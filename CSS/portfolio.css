@@ -34,7 +34,7 @@
     h1 {
         text-transform: uppercase;
         /* Capitalizing all h1 headings */
-        font-family: "Bradley Hand", Optima;
+        font-family: 'Bodoni Moda', "Bradley Hand", Optima;
         /* Sets the font family of all h1 headings */
         text-align: center;
         /* Centering all h1 elements */
@@ -61,7 +61,7 @@
     /* Paragraph elements */
     
     p {
-        font-family: 'Bradley Hand', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Rockwell Extra Bold;
+        font-family: 'Bodoni Moda', 'Bradley Hand', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, serif, Rockwell Extra Bold;
         text-align: justify;
         /* Justify text within paragraph elements */
         letter-spacing: .1vw;
