@@ -99,8 +99,8 @@
     /* Anchor elements */
     
     a {
-        color: rgb(174, 0, 255);
-        /* This ensures all links are purple */
+        color: #ff88d5;
+        /* This ensures all links are pink */
         cursor: pointer;
         /* This ensures all links change the mouse to a pointer when hovered over or clicked */
         text-decoration: underline;
@@ -233,7 +233,7 @@
     /* Navbar hover effects */
     
     .Navbar a:hover {
-        background-color: #dfaefc;
+        background-color: #ee88ff;
         /* Defines the background color that will display when you hover over the link */
         color: black;
         /* This defines the font color that will display when navbar a elements are hovered over */
@@ -245,7 +245,7 @@
     
     .Navbar a.active {
         /* This targets the a element on the navbar with the "active" class */
-        background-color: rgb(176, 0, 211);
+        background-color: #ee88ff;
     }
     /***** END OF NAVBAR STYLING *****/
     /***** Video Styling *****/
@@ -306,7 +306,7 @@
     /***** Slideshow Styling *****/
     
     #Slideshow_Background {
-        background: rgba(255, 255, 255, 0.35);
+        background: #ff889a;
         /* This creates a slightly transparent white background that's palced over the video in the background */
     }
     
@@ -482,7 +482,7 @@
         padding: 1.6%;
         height: 450px;
         /* This sets the height of the column to 400px -  this may need to be adjusted depending on the text you enter */
-        background-color: #f0edd2;
+        background-color: #ffed88;
         /* Sets the background color of the columns with class Column_1 */
     }
     /* Screens 576px and smaller will display a scroll bar if the text overflows the column height */
@@ -498,7 +498,7 @@
         width: 50%;
         padding: 1.6%;
         height: 450px;
-        background-color: #f0d2ec;
+        background-color: #b288ff;
     }
     /* This class is applied to the columns in the final row, overriding the height and padding to provide more room for the contact form  while keeping the rest of the formatting from Column_1 or Column_2 */
     
@@ -624,10 +624,10 @@
     
     button:hover,
     .form-container .btn:hover {
-        color: white;
-        /* This makes the text in the buttons white when hovered over */
-        background-color: black;
-        /* The background of the button changes to black when hovered over */
+        color: black;
+        /* This makes the text in the buttons black when hovered over */
+        background-color: #ee88ff;
+        /* The background of the button changes to #ee88ff when hovered over */
         transition-duration: 1s;
         /* This makes the transition last 1 second */
         -webkit-transition-duration: 1s;
