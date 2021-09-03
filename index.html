@@ -1,228 +1,629 @@
-<!DOCTYPE html>
-<html>
-<!--Head-->
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" />
-    <title>Jenny Louie</title>
-    <link rel="stylesheet" type="text/css" href="./CSS/portfolio.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- Additional CSS styling -->
+    <link href="CSS/portfolio.css" rel="stylesheet">
+    <title>Jenny Louie | Portfolio</title>
 </head>
 
-<!--Body-->
 
-<body class="Background">
 
-    <!--Navbar-->
-    <div class="Navbar">
-        <a class="active" href="#Home">Home</a>
-        <a href="#Slideshow">Slideshow</a>
-        <a href="#About">About</a>
-        <a href="#GitHub">GitHub</a>
-        <!--onclick and ondblclick functions to open and close contact form-->
-        <a onclick="openForm()" ondblclick="closeForm()">Contact</a>
-    </div>
+<!-- #### VANTA JS PLUGIN ### -->
+<!-- A. vanta js assets -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.waves.min.js"></script>
+<!-- B. Instilize vanta js by #id selector -->
 
-    <!--Breaks inserted to add space between navbar and the first heading-->
-    <br>
-    <br>
 
-    <!--Background video-->
-    <div id="Home">
-        <video autoplay muted loop id="Typing_Video">
-                <source src="images/video/production ID_3945144.mp4" type="video/mp4">
-                <!--Display message if video fails to run-->
-                Your browser does not support HTML5 video.
-            </video>
-    </div>
+<body class="bg-dark">
 
-    <!--Video text-->
-    <div class="Video_Text">
-        <h1 class="white-text">Jenny Louie's Portfolio</h1>
-        <strong>
-                <p class="center">
-                    <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
-                        <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
-                        <br>field of battle and to command such unswervingly dutiful actors or troops.
-                    </q>
-                    <br> -Joseph Weizenbaum
-                    <br>
-                    <br> My name is Jenny Louie. Welcome to my portfolio website. On it, I will tell you about my background and experience.
-                    <br>
-                    <br> Thank you for stopping by and enjoy! 
-                </p>
-            </strong>
-    </div>
-
-    <!-- Slideshow section added -->
-    <div id="Slideshow">
-        <div id="Slideshow_Background">
-            <div id="Slideshow_Container">
-                <!-- Slide 1 of 5 -->
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="images/IMG_0312.jpeg" alt="Picture of Jenny Louie">
-                    <div class="text">I'm happy to assist you on your project!</div>
+    <!--NavBar-->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#about">
+                <img src="images/circle_portrait.png" alt="pic of Jenny Louie" width="50" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="#resume">Resume</a>
+                    <a class="nav-item nav-link" href="#project">Projects</a>
+                    <a class="nav-item nav-link" href="#contact">Contact</a>
                 </div>
-                <!-- Slide 2 of 5 -->
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="images/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JS logos">
-                    <div class="text">I'm a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
-                </div>
-                <!-- Slide 3 of 5 -->
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="images/Python.png" alt="Python logo">
-                    <div class="text">the popular programming language Python,</div>
-                </div>
-
-                <!-- Slide 4 of 5 -->
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="images/SQL_and_Database.jpg" alt="SQL logo">
-                    <div class="text">back end development, databases and SQL.</div>
-                </div>
-                <!-- Slide 5 of 5 -->
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="images/pexels-torsten-dettlaff-193003.jpg" alt="Torsen Dettlaff pic">
-                    <div class="text"><a class="white-text" onclick="openForm()" href="#Contact">Contact me now!</a></div>
-                </div>
-                <!-- Previous and next buttons -->
-                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-            <br>
-            <!-- Adds a space between the slideshow images and the dots -->
-
-            <!-- Slideshow dots (these are another way for users to navigate through the slideshow) -->
-            <div style="text-align: center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
-
             </div>
         </div>
-    </div>
-    <!--end of slideshow-->
+    </nav>
 
-    <!--About section-->
-    <div class="Row" id="About">
-        <!--Left column-->
-        <div class="Column_2">
-            <img src="images/IMG_0169.jpeg" alt="Jenny Louie at SFSU">
-        </div>
-        <!--Right column-->
-        <div class="Column_1">
-            <h1>About</h1>
-            <p>
-                I am a software developer who became interested in coding through my love of games.
-                <br>
-                <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript,
-                UIUX design and more.
-                <br>
-                <br>I am a full-stack developer and would love to work with you on your project.
-            </p>
-            <p class="center"><a onclick="openForm()">Contact</a> me below!</p>
 
-            </p>
-        </div>
-    </div>
 
-    <!--GitHub section-->
-    <div class="Row" id="GitHub">
-        <!--Left column-->
-        <div class="Column_1">
-            <h1>GitHub</h1>
-            <p>
-                You can view my coding projects on my GitHub profile here:
-                <br>
-                <p class="center"><a href="https://github.com/jenjenayjen" target="_blank">Jenny Louie's Github</a></p>
-            </p>
-            <p>My most recent project was a UIUX Live Project where I worked on a wireframe, mockup and prototype website for Theatre Vertigo.
-                <br>
-                <p class="center"><a href="https://github.com/jenjenayjen/Tech-Academy-UIUX-Boot-Camp/tree/main/Live%20Project/Theatre%20Vertigo%20Adobe" target="_blank">Live Project File</a></a>
-                </p>
-            </p>
-        </div>
-        <!--Right column-->
-        <div class="Column_2">
-            <a href="https://github.com/jenjenayjen" target="_blank"><img src="images/GitHub.png" alt="GitHub Logo"></a>
-        </div>
-    </div>
-
-    <!--LinkedIn-->
-    <div class="row" id="LinkedIn">
-
-        <!--left column-->
-        <div class="Column_2">
-            <a href="https://www.linkedin.com/in/jennylouie1231/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn Logo"></a>
-        </div>
-        <!--right Column-->
-        <div class="Column_1">
-            <h1>LinkedIn</h1>
-            <p>
-                You can view my LinkedIn page here:
-                <br>
-                <p class="center"><a href="https://www.linkedin.com/in/jennylouie1231/" target="_blank">Linkedin!</a></p>
-            </p>
+    <!--About-->
+    <div class=" section header-section jumbotron jumbotron-fluid py-5" id="about">
+        <div class="header-container">
+            <div class="row d-flex flex-row justify-content-around align-items-center">
+                <!--Column for picture of Jenny Louie-->
+                <div class="col-md-3 mt-5">
+                    <img src="images/IMG_0312-circle_border.png" class="img-fluid" alt="pic of Jenny Louie" width="500" height="500">
+                </div>
+                <!--Column for about section-->
+                <div class="col-md-7 mt-5">
+                    <p class="about-text">
+                        Thanks for visiting my site! I am a UIUX Designer with a coding background. I began coding in high school and completed an art degree in college. I graduated from Tech Academy with a certificate in UIUX design because I wanted to combine my knowledge
+                        of art and tech into a career!
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 
     <!--Resume-->
-    <div class="row" id="Resume">
-        <!--left colummn-->
-        <div class="Column_1">
-            <h1>Resume</h1>
-            <p>
-                You can view my Resume here:
-                <br>
+    <section class="pt-1 pb-5 resume-section bg-dark text-white" id="resume">
+        <div class="container mt-2">
+            <h1 class="text-center">Resume</h1>
+            <hr>
+            <!--First Row of Resume (experience and skills summary)-->
+            <div class="row">
 
-                <p class="center"><a href="resume.html" target="_blank">Jenny Louie's Resume</a></p>
-            </p>
-        </div>
-        <!--right column-->
-        <div class="Column_2">
-            <a href="resume.html" target="_blank"><img src="images/resume.jpeg" alt="resume pic"></a>
-        </div>
-    </div>
+                <!--Experience Summary-->
+                <div class="col">
+                    <h3 class="text-center">Experience Summary</h3>
+                    <div class="card mb-3">
+                        <div class="card-body mx-3 my-2">
+                            <ul class="list-group list-group-flush mt-2">
+                                <li class="list-group-item">
+                                    Designed web applications utilizing HTML, CSS, JavaScript, and Bootstrap
+                                </li>
+                                <li class="list-group-item">
+                                    Created wireframes and mockups in Adobe Photoshop
+                                </li>
+                                <li class="list-group-item">
+                                    Created prototypes in Adobe XD
+                                </li>
+                                <li class="list-group-item">
+                                    Attended Code Day a couple time and created projects there
+                                </li>
+                                <li class="list-group-item">
+                                    Completed coding projects in Java and Python
+                                </li>
 
-    <!--contact section-->
-    <div class="Row" id="Contact">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-
-        <!-- Contact form, right column-->
-        <div id="Contact">
-            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
-            <div class="form-popup" id="myForm">
-                <form action="https://formspree.io/f/moqyeyjy" method="POST" class="form-container">
-                    <!-- Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
-                    <h1>Contact</h1>
-                    <label for="name"><b>Name</b></label>
-                    <input type="text" placeholder="Type your name here" name="name" required>
-                    <label for="phone"><b>Phone</b></label>
-                    <input type="text" placeholder="Type your phone number here" name="phone">
-                    <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Type your email address here" name="email" required>
-                    <label for="message"><b>Message</b></label>
-                    <input type="text" placeholder="Type your message here" name="message">
-
-                    <button type="submit" class="btn">SUBMIT</button>
-                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
-                </form>
+                <!--Skills Summary-->
+                <div class="col">
+                    <h3 class="text-center">Skills Summary</h3>
+                    <div class="card mb-3">
+                        <div class="card-body mx-3 my-2">
+                            <ul class="list-group list-group-flush mt-2">
+                                <li class="list-group-item">
+                                    <b>Programming/Development:</b> HTML, CSS, JavaScript, Java, Python, Bootstrap, Adobe Photoshop, Adobe XD
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Project Management:</b> Azure DevOps, Agile/Scrum
+                                </li>
+                                <li class="list-group-item">
+                                    <b>IDEs:</b> VS Code, Eclipse, NetBeans
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Version Control:</b> Git, Git Bash, GitHub
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Business Domains:</b> E-Commerce, Service Industry, Arts
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Non-Technical:</b> Design
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!--end of row 1-->
+
+            <!--Second Row of Resume (Expereince)-->
+            <div class="row">
+                <!--Programming Experience-->
+                <div class="col">
+                    <h3 class="text-center">Programming Experience</h3>
+
+                    <!--UIUX Designer-->
+                    <div class="card mb-3">
+                        <div class="card-body text-black mx-3 my-2">
+                            <div class="mx-3 ">
+                                <div>
+                                    <strong>UIUX Designer</strong> | Prosper IT Tech, Portland, OR
+                                </div>
+                                Aug 2021
+                            </div>
+                            <ul class="list-group list-group-flush mt-2">
+                                <li class="list-group-item">
+                                    2-week <a href="#theatrevertigo">Live Project</a> experience creating wireframes, mockups, and prototypes for a website from scratch based on what client requested; mainly used Adobe Photoshop for wireframes and mockups
+                                    and Adobe XD for prototypes.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--Self-Study Art 699-->
+                    <div class="card mb-3">
+                        <div class="card-body text-black mx-3 my-2">
+                            <div class="mx-3">
+                                <div>
+                                    <strong>Student</strong> | San Francisco State University, San Francisco, CA
+                                </div>
+                                Jan 2018 - May 2018
+                            </div>
+                            <ul class="list-group list-group-flush mt-2">
+                                <li class="list-group-item">
+                                    Semester course dedicated to combining art and code. Created a <a href="#433">piece</a> that was featured in a student gallery at the end of the year.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Programming Intern-->
+                    <div class="card mb-3">
+                        <div class="card-body text-black mx-3 my-2">
+                            <div class="mx-3">
+                                <div>
+                                    <strong>Programming Intern</strong> | Mission Bit, San Francisco, CA
+                                </div>
+                                Jul 2014 - Aug 2014
+                            </div>
+                            <ul class="list-group list-group-flush mt-2">
+                                <li class="list-group-item">
+                                    Worked on website mainly in CSS and other small coding projects.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--Code Day-->
+                    <div class="card mb-3">
+                        <div class="card-body text-black mx-3 my-2">
+                            <div class="mx-3">
+                                <div>
+                                    <strong>Developer</strong> | Code Day, San Franciso, CA
+                                </div>
+                                2014
+                            </div>
+                            <ul class="list-group list-group-flush mt-2">
+                                <li class="list-group-item">
+                                    Attended Code Day May 2014 and created <a href="#kw">Kitty Wars</a> in Java with a team
+                                </li>
+                                <li class="list-group-item">
+                                    Attended Code Day Jan 2014 and created <a href="#lftz">Left for the Zombies</a> in Java with a team
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Work Experience-->
+                <div class="col">
+                    <h3 class="text-center">Work Experience</h3>
+
+                    <!--Buyer-->
+                    <div class="card mb-3">
+                        <div class="card-body text-black mx-3 my-2">
+                            <div class="mx-3">
+                                <div>
+                                    <strong>Buyer</strong> | Kinokuniya Bookstore of America, San Francisco, CA
+                                </div>
+                                Jun 2018 - Nov 2019
+                            </div>
+                            <ul class="list-group list-group-flush mt-2">
+                                <li class="list-group-item">
+                                    Fixed computer problems that came up such as screen freezing and crashing.
+                                </li>
+                                <li class="list-group-item">
+                                    Corresponded emails with representatives for inventory related orders and problems.
+                                </li>
+                                <li class="list-group-item">
+                                    Ordered inventory, displayed items on floor, open and close store, price items, clean.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--Barista-->
+                    <div class="card mb-3">
+                        <div class="card-body text-black mx-3 my-2">
+                            <div class="mx-3">
+                                <div>
+                                    <strong>Barista</strong> | Starbucks, San Francisco, CA
+                                </div>
+                                Dec 2016 - Jan 2018
+                            </div>
+                            <ul class="list-group list-group-flush mt-2">
+                                <li class="list-group-item">
+                                    Helped get store ready for opening, made drinks, count inventory, clean, ring customers.
+                                </li>
+                                <li class="list-group-item">
+                                    Worked closely in a team
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--Intern-->
+                    <div class="card mb-3">
+                        <div class="card-body text-black mx-3 my-2">
+                            <div class="mx-3">
+                                <div>
+                                    <strong>Programming Intern</strong> | Mission Bit, San Francisco, CA
+                                </div>
+                                Jul 2014 - Aug 2014
+                            </div>
+                            <ul class="list-group list-group-flush mt-2">
+                                <li class="list-group-item">
+                                    Worked on website in CSS
+                                </li>
+                                <li class="list-group-item">
+                                    Researched possible locations for future teaching sessions
+                                </li>
+                                <li class="list-group-item">
+                                    Worked on other small coding projects.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--Receptionist-->
+                    <div class="card mb-3">
+                        <div class="card-body text-black mx-3 my-2">
+                            <div class="mx-3">
+                                <div>
+                                    <strong>Receptionist</strong> | LV Optometry, Millbrae, CA
+                                </div>
+                                Jul 2012 - Aug 2014
+                            </div>
+                            <ul class="list-group list-group-flush mt-2">
+                                <li class="list-group-item">
+                                    Greated and pretested patients
+                                </li>
+                                <li class="list-group-item">
+                                    Data entry of patient information and examination results into charts
+                                </li>
+                                <li class="list-group-item">
+                                    Helped with inventory management and cleaning
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--end of row 2-->
+
+            <!--Third Row of Resume (education)-->
+            <div class="row">
+                <div class="col">
+                    <h3 class="text-center">Education</h3>
+
+                    <!--Tech Academy-->
+                    <div class="card mb-3">
+                        <div class="card-body text-black mx-3 my-2">
+                            <div class="mx-3">
+                                <div>
+                                    <strong>Certification in UIUX Design</strong> | Tech Academy, Portland, OR
+                                </div>
+                                Apr 2021 - Aug 2021
+                            </div>
+                            <ul class="list-group list-group-flush mt-2">
+                                <li class="list-group-item">
+                                    Immersive UIUX Designer boot camp with more than 600 hours of instruction and hands-on coding.
+                                </li>
+                                <li class="list-group-item">
+                                    Predominantly the program is based on Adobe Photoshop and Adobe XD, along with the fundamentals of Computer Science, HTML and CSS, JavaScript, Python, and web application development.
+                                </li>
+                                <li class="list-group-item">
+                                    Completed numerous practical projects.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--CCSF-->
+                    <div class="card mb-3">
+                        <div class="card-body text-black mx-3 my-2">
+                            <div class="mx-3">
+                                <div>
+                                    <strong>Associates in Accounting</strong> | City College of San Francisco, CA
+                                </div>
+                                Aug 2019 - Current
+                            </div>
+                            <ul class="list-group list-group-flush mt-2">
+                                <li class="list-group-item">
+                                    Took accounting, tax, and business courses
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--SFSU-->
+                    <div class="card mb-3">
+                        <div class="card-body text-black mx-3 my-2">
+                            <div class="mx-3">
+                                <div>
+                                    <strong>Bachelor of Art</strong> | San Francisco State Univesity, San Francisco, CA
+                                </div>
+                                Aug 2014 - May 2018
+                            </div>
+                            <ul class="list-group list-group-flush mt-2">
+                                <li class="list-group-item">
+                                    Took courses in Java, C++, Data, and Discrete Math Structures
+                                </li>
+                                <li class="list-group-item">
+                                    Majored in Studio Art. Experienced in traditional and digital art forms.
+                                </li>
+                                <li class="list-group-item">
+                                    Completed independent study program where art was incorporated into code.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--Lowell-->
+                    <div class="card mb-3">
+                        <div class="card-body text-black mx-3 my-2">
+                            <div class="mx-3">
+                                <div>
+                                    <strong>High School Diploma</strong> | Lowell High School, San Francisco, CA Aug 2010 - May 2014
+                                </div>
+                                <ul class="list-group list-group-flush mt-2">
+                                    <li class="list-group-item">
+                                        Completed few semesters in computer class
+                                    </li>
+                                    <li class="list-group-item">
+                                        Hands-on-learning with Java and Python
+                                    </li>
+                                    <li class="list-group-item">
+                                        Completed many small coding projects
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end of row 3-->
+
+            <!--printable pdf of resume 
+            <div class="row">
+                <div class="col">
+                    <h3 class="text-center">Printable Resume</h3>
+                    <div class="card mb-3">
+                        <div class="card-body mx-3 my-0">
+                            <p class="text-center"><a href="printResume.html" target="_blank">Jenny Louie | Resume 2021</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>-->
         </div>
+    </section>
+
+    <!--Project-->
+    <section class="pt-1 pb-5 resume-section bg-dark text-white" id="project">
+        <div class="container mt-2">
+            <h1 class="text-center">Projects</h1>
+            <hr>
+
+            <div class="row row-cols-1 text-center">
+                <!--live project-->
+                <div class="col">
+                    <div class="card mb-3 w-100" id="theatrevertigo">
+                        <img src="images/TheatreVertigoPrototype.gif " class="card-img-top " alt="Theatre Vertigo Prototype gif">
+                        <div class="card-body text-black mx-3 my-2">
+                            <h5 class="card-title align">Theatre Vertigo</h6>
+                                <h6 class="card-subtitle mb-2 text-muted ">Wireframe | Mockup | Prototype | 2021</p>
+                                    <p class="card-text ">2 Week Live Project at the Tech Academy</p>
+                                    <a href="https://github.com/jenjenayjen/Tech-Academy-UIUX-Boot-Camp/tree/main/Live%20Project/Theatre%20Vertigo%20Adobe " class="btn-sm">Github</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Canyon Hikers-->
+                <div class="col">
+                    <div class="card mb-3 w-100">
+                        <img src="images/Canyon Hikers UX Case Study.png" class="card-img-top " alt="Canyon Hikers Case Study">
+                        <div class="card-body text-black mx-3 my-2 ">
+                            <h5 class="card-title ">Canyon Hikers</h6>
+                                <h6 class="card-subtitle mb-2 text-muted ">Wireframe | Mockup | Prototype | HTML | 2021</p>
+                                    <p class="card-text ">Assigment at Tech Academy</p>
+                                    <a href="https://github.com/jenjenayjen/Tech-Academy-UIUX-Boot-Camp/tree/main/UIUX_ASSIGNMENTS/Canyon%20Hikers" class="card-link ">Github</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Independent Study-->
+                <div class="col">
+                    <div class="card mb-3 w-100" id="433">
+                        <img src="images/433demo.gif" class="card-img-top " alt="4'33''demo gif">
+                        <div class="card-body text-black mx-3 my-2 ">
+                            <h5 class="card-title ">4'33''</h6>
+                                <h6 class="card-subtitle mb-2 text-muted ">Java | Processing | 2018</p>
+                                    <p class="card-text ">A project that was inspired by John Cage's 4'33''</p>
+                                    <a href="https://github.com/jenjenayjen/Processing-Art-699" class="card-link ">Github</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Kitty Wars-->
+                <div class="col">
+                    <div class="card mb-3 w-100" id="kw">
+                        <img src="images/KW3.png" class="card-img-top " alt="SS of KW">
+                        <div class="card-body text-black mx-3 my-2 ">
+                            <h5 class="card-title ">Kitty Wars</h6>
+                                <h6 class="card-subtitle mb-2 text-muted ">Java | Processing | 2014</p>
+                                    <p class="card-text ">A cat version of Castle Wars</p>
+                                    <a href="https://github.com/jenjenayjen/KittyWars" class="card-link ">Github</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Left for the Zombies-->
+                <div class="col">
+                    <div class="card mb-3 w-100" id="lftz">
+                        <img src="images/LFTZ.gif" class="card-img-top " alt="gif of LFTZ">
+                        <div class="card-body text-black mx-3 my-2 ">
+                            <h5 class="card-title ">Left for the Zombies</h6>
+                                <h6 class="card-subtitle mb-2 text-muted ">Java | Processing | 2014</p>
+                                    <p class="card-text ">A short story based game</p>
+                                    <a href="https://github.com/jenjenayjen/LeftForTheZombies" class="card-link ">Github</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--Miscellanenous Projects at Tech Academy-->
+            <!--Suga Site, one page site, cinema site, tic tac toe, calculator, etc-->
+
+            <!--Miscellaneous Projects at Lowell-->
+            <!--bouncing ball, etc-->
+        </div>
+    </section>
+
+
+
+    <!--Contact-->
+    <div class="container " id="contact">
+        <section class="my-5">
+            <div class="card">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card-body form">
+                            <form action="https://formspree.io/f/moqyeyjy" method="POST">
+                                <h3 class="mt-4">Contact Me</h3>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <label for="form-contact-name" class>Name</label>
+                                            <input type="text" id="form-contact-name" class="form-control" name="name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <label for="form-contact-email" class>Email</label>
+                                            <input type="text" id="form-contact-email" class="form-control" name="email">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <label for="form-contact-phone" class>Phone</label>
+                                            <input type="text" id="form-contact-phone" class="form-control" name="phone-number">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="md-form mb-0">
+                                            <label for="form-contact-company" class>Company</label>
+                                            <input type="text" id="form-contact-company" class="form-control" name="company">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="md-form mb-0">
+                                            <label for="form-contact-message">Your Message</label>
+                                            <textarea id="form-contact-message" class="form-control md-textarea" rows="3" name="message">
+
+                                            </textarea>
+                                            <button type="submit" class="send-button bg-dark text-white text-decoration-underline mt-2" style="font-size: small;"><span>Send</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card-body contact text-center h-100 white-text">
+                            <h3 class="my-4 pb-2">Contact Infomation</h3>
+                            <hr>
+                            <ul class="text-lg-left list-unstyled ml-4">
+                                <li>
+                                    <p>San Francisco, CA</p>
+                                </li>
+                                <li>
+                                    <p>(415)290-5186</p>
+                                </li>
+                                <li>
+                                    <p>jenny.louie.1231@gmail.com</p>
+                                </li>
+                            </ul>
+                            <hr class="my-4">
+                            <ul class="list-inline text-center list-unstyled">
+                                <li class="list-inline-item">
+                                    <a href="#">LinkedIn</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#">Instagram</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#">Github</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!--Footer section-->
-    <footer>
-        <p>
-            <p class="center">&copy Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p>
-            <br>
-        </p>
+
+    <!--footer-->
+    <footer class="bg-dark text-center text-lg-start">
+        <div class="text-center p-3">&copy; 2021 Copyright: Jenny Louie</div>
     </footer>
-    <script src="JS/portfolio.js"></script>
+
+
+
+
+
+    <!-- Javascript: Bootstrap Bundle with Popper -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+    <!--vanta js scripts-->
+    <script src="three.r119.min.js "></script>
+    <script src="vanta.waves.min.js "></script>
+    <script>
+        VANTA.WAVES({
+            el: "#about ",
+            mouseControls: false,
+            touchControls: false,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x393939,
+            shininess: 4.00,
+            waveHeight: 6.50,
+            waveSpeed: 1,
+            zoom: 0.65
+        })
+    </script>
 </body>
+
 
 </html>
